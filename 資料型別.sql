@@ -174,6 +174,7 @@ go
 declare @i varchar(15)
 set @i='10,000.12345'
 select @i 'i',CAST(@i as money) '貨幣型號'
+select @i 'i',CONVERT( money,@i) '貨幣型號'
 go
 
 --binary型別
@@ -181,7 +182,7 @@ declare @i bigint
 declare @j varbinary(20)
 set @i=123456
 set @j=@i
-select @i,@j,cast(@j as int),DATALENGTH(@j)
+select @i'i',@j'j',cast(@j as int)'2進位轉int',DATALENGTH(@j)'長度'
 go
 
 --建立新資料庫
@@ -194,7 +195,7 @@ GO
 CREATE DATABASE [MyDB]
 GO
 
-USE [Mydb]
+USE [MyDB4]
 GO
 
 --建立資料表
